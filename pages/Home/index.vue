@@ -1,9 +1,9 @@
 <template>
     <div>
         Home
-        <div id="charts"></div>
+        <!-- <div id="charts"></div> -->
         <div id="charts1"></div>
-        <div id="charts2"></div>
+        <!-- <div id="charts2"></div> -->
     </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     mounted(){
         this.$api.getMapData()
         .then(res => {
-            // this.$charts.line('charts1',res.data.data)
+            this.$charts.line('charts1',res.data.data)
         })
         // this.$charts.polar('charts')
         // this.$charts.country('charts2')

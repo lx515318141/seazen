@@ -14,3 +14,8 @@
         import '../node_modules/echarts/map/js/china.js'
         import '../node_modules/echarts/map/js/world.js'
     上面引入myCharts的路径和文件需要自己创建，并在myCharts中封装画echarts图表的所有方法
+
+
+style中引入 lang="less" ，会产生报错，需要安装less和less-loader
+npm install --save less
+npm install --save less-loader

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Layout from '../pages/Layout'
+
 import Home from '../pages/Home'
 import Decision from '../pages/Decision'
 import Information from '../pages/Information'
@@ -14,11 +16,63 @@ import System from '../pages/System'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
-      component:Home
-    }
+      redirect: '/home',
+      component: Layout,
+      children:[
+        {
+          path: '/',
+          name: 'Home',
+          component:Home,
+          meta:{
+            isLogin:true
+          }
+        },
+        {
+          path: '/decision',
+          name: 'Decision',
+          component:Decision
+        },
+        {
+          path: '/information',
+          name: 'Information',
+          component:Information
+        },
+        {
+          path: '/management',
+          name: 'Management',
+          component:Management
+        },
+        {
+          path: '/system',
+          name: 'System',
+          component:System
+        },
+      ]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component:Login,
+      meta:{
+        isLogin:true
+      }
+    },
   ]
 })
+
+router.beforeEach((to,from,next) => {
+  if(to.matched.some(item => item.meta.isLogin)){
+    next()
+  }else{
+    next({
+      path:'/login'
+    })
+  }
+})
+
+export default router
