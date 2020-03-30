@@ -4,12 +4,17 @@
         <!-- <div id="charts"></div> -->
         <div id="charts1"></div>
         <!-- <div id="charts2"></div> -->
+        <CircleProgress />
     </div>
 </template>
 
 <script>
+import CircleProgress from "../../components/CircleProgress"
 export default {
     name:"Home",
+    components:{
+        CircleProgress
+    },
     mounted(){
         this.$api.getMapData()
         .then(res => {

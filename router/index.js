@@ -10,6 +10,8 @@ import Login from '../pages/Login'
 import Management from '../pages/Management'
 import System from '../pages/System'
 
+import store from '../store'
+
 // import InformationCurrent from '../pages/Information/InformationCurrent'
 // import InformationFullPeriod from '../pages/Information/InformationFullPeriod'
 // import InformationThatYear from '../pages/Information/InformationThatYear'
@@ -25,7 +27,7 @@ const router = new Router({
       component: Layout,
       children:[
         {
-          path: '/',
+          path: '/home',
           name: 'Home',
           component:Home,
           meta:{
@@ -69,9 +71,15 @@ router.beforeEach((to,from,next) => {
   if(to.matched.some(item => item.meta.isLogin)){
     next()
   }else{
-    next({
-      path:'/login'
-    })
+    const token = store.state.token
+    if(token){
+      console.log(token);
+      next()
+    }else{
+      next({
+        path:'/login'
+      })
+    }
   }
 })
 

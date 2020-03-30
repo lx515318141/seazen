@@ -24,6 +24,15 @@ Vue.use(ElementUI);
 // Vue.use(Button)
 Vue.config.productionTip = false
 
+// 赋值，将本地的token赋值给vuex的token
+const localToken = localStorage.getItem("token")
+const localUsername = localStorage.getItem("username")
+
+if(localToken){
+  store.commit("setToken",localToken)
+  store.commit("setUser",localUsername)
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
