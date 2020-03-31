@@ -10,11 +10,11 @@ import Login from '../pages/Login'
 import Management from '../pages/Management'
 import System from '../pages/System'
 
-import store from '../store'
+import InformationCurrent from '../pages/Information/InformationCurrent'
+import InformationFullPeriod from '../pages/Information/InformationFullPeriod'
+import InformationThatYear from '../pages/Information/InformationThatYear'
 
-// import InformationCurrent from '../pages/Information/InformationCurrent'
-// import InformationFullPeriod from '../pages/Information/InformationFullPeriod'
-// import InformationThatYear from '../pages/Information/InformationThatYear'
+import store from '../store'
 
 Vue.use(Router)
 
@@ -42,7 +42,21 @@ const router = new Router({
         {
           path: '/information',
           name: 'Information',
-          component:Information
+          component:Information,
+          children:[
+            {
+              path:"current",
+              component:InformationCurrent
+            },
+            {
+              path:"fullPeriod",
+              component:InformationFullPeriod
+            },
+            {
+              path:"thatYear",
+              component:InformationThatYear
+            },
+          ]
         },
         {
           path: '/management',

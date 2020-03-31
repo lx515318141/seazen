@@ -15,7 +15,7 @@ export default {
 
 <style>
 html {overflow-y:scroll;}
-body {margin:0; padding:0; font:15px"\5B8B\4F53",sans-serif;background:#f0f2f5;}
+body {margin:0; padding:0; font:15px"\5B8B\4F53",sans-serif;}
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
 table,td,tr,th{font-size:15px;}
 li{list-style-type:none;}

@@ -62,35 +62,8 @@ export default {
 </script>
 
 <style scoped>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .cp {
     position: relative;
-    width: 110px;
-    height: 110px;
     margin: 0 auto;
     display: inline-block;
 }
@@ -100,7 +73,7 @@ export default {
 }
 
 .cp-text {
-    width: 100px;
+    width: 110px;
     font-size: 22px;
     position: absolute;
     text-align: center;

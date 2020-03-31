@@ -1,6 +1,6 @@
 <template>
     <div>
-        Home
+        <HomeTab />
         <!-- <div id="charts"></div> -->
         <div id="charts1"></div>
         <!-- <div id="charts2"></div> -->
@@ -10,10 +10,12 @@
 
 <script>
 import CircleProgress from "../../components/CircleProgress"
+import HomeTab from "../Home/HomeTab"
 export default {
     name:"Home",
     components:{
-        CircleProgress
+        CircleProgress,
+        HomeTab
     },
     mounted(){
         this.$api.getMapData()
